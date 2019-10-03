@@ -8,7 +8,7 @@ const TodoForm = ({ addTodo }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (!value) {
-            console.log('Its empty stupid');
+            alert('To do cant be empty')
         } else {
             addTodo(value)
         }
