@@ -22,9 +22,16 @@ function App() {
     setTodosList(newTodos);
   }
 
-  const isDone = (num) => {
+  const removeTodo = (index) => {
+    let newTodo = todosList.filter(function (todo) {
+      return todo.id !== index;
+    });
+    setTodosList(newTodo);
+  }
+
+  const isDone = (index) => {
     const newTodos = [...todosList];
-    newTodos[num].done = !newTodos[num].done;
+    newTodos[index].done = !newTodos[index].done;
     setTodosList(newTodos);
   }
 
@@ -34,7 +41,7 @@ function App() {
         <Row>
           {todosList.map((todo, index) => (
             <Col sm='12' md='6' lg='4'>
-              <Todo key={todo.id} index={index} todo={todo} isDone={isDone} />
+              <Todo key={todo.id} index={index} todo={todo} isDone={isDone} removeTodo={removeTodo} />
             </Col>
           ))}
         </Row>

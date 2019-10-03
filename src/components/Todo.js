@@ -7,7 +7,7 @@ import {
 import Cross from '../images/cross.jpeg';
 import Tick from '../images/Tick.png';
 
-const Todo = ({ todo, index, isDone }) => {
+const Todo = ({ todo, index, isDone, removeTodo }) => {
     console.log(todo);
     return (
         <div>
@@ -17,6 +17,7 @@ const Todo = ({ todo, index, isDone }) => {
                     <CardTitle > TO-DO</CardTitle>
                     <CardText>{todo.todo}</CardText>
                     <Button block onClick={() => isDone(index)}>Done</Button>
+                    <Button block color='danger' onClick={() => removeTodo(todo.id)}>Remove</Button>
                 </CardBody>
             </Card>
         </div>
