@@ -1,0 +1,31 @@
+import React, { useState } from 'react'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
+
+const TodoForm = ({ addTodo }) => {
+    const [value, setValue] = useState()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (!value) {
+            console.log('Its empty stupid');
+        } else {
+            addTodo(value)
+        }
+        setValue('')
+    }
+    return (
+        <div>
+            <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label for="todoInput">Todo</Label>
+                    <Input type="text" id="todoInput" placeholder="Whats there to do"
+                        onChange={e => setValue(e.target.value)} />
+                </FormGroup>
+                <Button>Submit</Button>
+            </Form>
+        </div>
+    )
+}
+
+export default TodoForm
