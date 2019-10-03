@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 const TodoForm = ({ addTodo }) => {
@@ -19,7 +19,7 @@ const TodoForm = ({ addTodo }) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label for="todoInput">Todo</Label>
-                    <Input type="text" id="todoInput" placeholder="Whats there to do"
+                    <Input type="text" id="todoInput" placeholder="Whats there to do" value={value}
                         onChange={e => setValue(e.target.value)} />
                 </FormGroup>
                 <Button>Submit</Button>

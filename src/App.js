@@ -13,7 +13,12 @@ function App() {
   ]);
 
   const addTodo = (text) => {
-    const newTodos = [...todosList, text];
+    const newTodo = {
+      id: Math.floor((Math.random() * 10) + 1),
+      todo: text,
+      done: false
+    }
+    const newTodos = [...todosList, newTodo];
     setTodosList(newTodos);
   }
 
